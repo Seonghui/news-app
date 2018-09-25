@@ -1,0 +1,10 @@
+@import 'utils';
+body {
+  background: $oc-gray-2;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}

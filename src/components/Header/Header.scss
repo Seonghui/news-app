@@ -1,0 +1,13 @@
+@import 'utils';
+
+.Header {
+  height: 3rem;
+  background: $oc-orange-5;
+  h1 {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+}
