@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from './components/Header/Header';
 import NewsList from './components/NewsList/NewsList'
-import Article from './components/Article/Article'
-
-
 
 class App extends Component {
   state = {
+    page: 10,
   }
 
   componentDidMount() {
@@ -15,7 +13,8 @@ class App extends Component {
   }
 
   callApi = () => {
-    const url = "https://content.guardianapis.com/search?&page-size=20&show-fields=headline,thumbnail,body&api-key=" + process.env.REACT_APP_NEWS_API_KEY;
+    const { page } = this.state;
+    const url = 'https://content.guardianapis.com/search?&page-size=' + page + '&show-fields=headline,thumbnail,body&api-key=' + process.env.REACT_APP_NEWS_API_KEY;
     return axios.get(url);
   }
 
@@ -36,9 +35,8 @@ class App extends Component {
     
     return (
       <div className={newsData ? "App" : "App--loading"}>
-      <Header />
-      <NewsList list={newsData} />
-      {/* <Article /> */}
+        <Header />
+        <NewsList list={newsData} />
       </div>
     );
   }
