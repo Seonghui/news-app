@@ -12,7 +12,7 @@ class Article extends Component {
         <div className="news">
           <div className="news-header">
             <h1>{head}</h1>
-            <div className="btn close" onClick={ onClose }>
+            <div className="textbtn close" onClick={ onClose }>
               <MdClose size={30} />
             </div>
           </div>

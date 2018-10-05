@@ -30,13 +30,24 @@ class App extends Component {
     }
   }
 
+  handleClickMore = () => {
+    const { page } = this.state;
+    this.setState ({
+      page: page + 10,
+    });
+    this.getNews();
+  }
+
   render() {
-    const { newsData } = this.state;
+    const { newsData, page } = this.state;
+
+    console.log(page);
     
     return (
       <div className={newsData ? "App" : "App--loading"}>
         <Header />
         <NewsList list={newsData} />
+        <div className="btn basic" onClick={this.handleClickMore}>see more</div>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NewsCard from '../NewsCard/NewsCard'
 import Article from '../Article/Article'
+import './NewsList.scss';
 
 class NewsList extends Component {
 
