@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import NewsCard from '../NewsCard/NewsCard'
-import Article from '../Article/Article'
+import NewsCard from '../NewsCard/NewsCard';
+import Article from '../NewsModal/NewsModal';
+import { FadingCircle } from 'better-react-spinkit';
 import './NewsList.scss';
 
 class NewsList extends Component {
@@ -45,10 +46,11 @@ class NewsList extends Component {
   render() {
     const { list } = this.props;
     const { articleBox, newsPhoto, newsHead, newsBody } = this.state;
+    const loading = <FadingCircle color="#37d9a9" size={60}/>;
 
     return (
-      <div className="NewsList">
-        {list ? this.renderNews() : 'Loading'}
+      <div className={list ? "NewsList" : "NewsList loading"}>
+        {list ? this.renderNews() : loading}
         {articleBox && (
           <Article 
             onClose={this.handleClose}

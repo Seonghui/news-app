@@ -39,12 +39,10 @@ class App extends Component {
   }
 
   render() {
-    const { newsData, page } = this.state;
-
-    console.log(page);
+    const { newsData } = this.state;
     
     return (
-      <div className={newsData ? "App" : "App--loading"}>
+      <div className="App">
         <Header />
         <NewsList list={newsData} />
         <div className="btn basic" onClick={this.handleClickMore}>see more</div>
