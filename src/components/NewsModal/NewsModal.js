@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import './Article.scss';
+import './NewsModal.scss';
 import { MdClose } from 'react-icons/md';
 
-class Article extends Component {
+class NewsModal extends Component {
+  componentDidMount() {
+    document.body.style.overflowY = 'hidden';
+  }
+  componentWillUnmount() {
+    document.body.style.overflowY = 'auto';
+  }
 
   render() {
     const { onClose, photo, head, body } = this.props;
     return (
-      <div className="Article">
-        <div className="darkBg" onClick={ onClose }></div>
+      <div className="NewsModal">
+        <div className="darkBg" onClick={ onClose } />
         <div className="news">
           <div className="news-header">
             <h1>{head}</h1>
@@ -26,4 +32,4 @@ class Article extends Component {
   }
 }
 
-export default Article;
+export default NewsModal;
