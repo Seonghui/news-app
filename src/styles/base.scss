@@ -21,7 +21,8 @@ h1 {
   height: 40px;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
-
+  margin: 0 auto;
+  cursor: pointer;
   &.basic {
     background: #38d9a9;
     color: #fff;
